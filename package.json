@@ -1,0 +1,54 @@
+{
+  "name": "template",
+  "version": "0.1.0",
+  "description": "Generate Node.js projects from templates",
+  "main": "dist/index.js",
+  "scripts": {
+    "tsc": "ttsc",
+    "lint": "eslint --fix src/**/*.ts",
+    "prebuild": "npm run lint",
+    "build": "rm -r dist/ && npm run tsc",
+    "postbuild": "cp -r src/templates dist",
+    "pretest": "npm run build",
+    "test": "mocha --recursive"
+  },
+  "bin": {
+    "template": "dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jabez007/node-template.git"
+  },
+  "keywords": [
+    "project",
+    "template"
+  ],
+  "author": "Jimmy McCann",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jabez007/node-template/issues"
+  },
+  "homepage": "https://github.com/jabez007/node-template#readme",
+  "devDependencies": {
+    "@types/ejs": "^2.6.3",
+    "@types/inquirer": "^6.0.3",
+    "@types/node": "^12.6.8",
+    "@types/shelljs": "^0.8.5",
+    "@types/yargs": "^13.0.0",
+    "@typescript-eslint/eslint-plugin": "^1.13.0",
+    "@typescript-eslint/parser": "^1.13.0",
+    "@zerollup/ts-transform-paths": "^1.7.3",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-plugin-import": "^2.18.2",
+    "mocha": "^6.2.0",
+    "ttypescript": "^1.5.7",
+    "typescript": "^3.5.3"
+  },
+  "dependencies": {
+    "ejs": "^2.6.2",
+    "inquirer": "^6.5.0",
+    "shelljs": "^0.8.3",
+    "yargs": "^13.3.0"
+  }
+}

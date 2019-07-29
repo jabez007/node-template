@@ -1,0 +1,39 @@
+{
+  "name": "<%= projectName %>",
+  "version": "<%= projectVersion %>",
+  "description": "<%= projectDescription %>",
+  "main": "<%= projectEntryPoint %>",
+  "scripts": {
+    "tsc": "ttsc",
+    "lint": "eslint --fix src/**/*.ts",
+    "prebuild": "npm run lint",
+    "build": "npm run tsc",
+    "pretest": "npm run build",
+    "test": "mocha --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+<%= projectRepository %>"
+  },
+  "keywords": [ <% for (let i = 0; i < projectKeywords.length; i += 1) { %>
+    "<%= projectKeywords[i] %>"<% if (projectKeywords.length > i + 1) { %>,<% } %>
+  <% } %> ],
+  "author": "<%= projectAuthor %>",
+  "license": "<%= projectLicense %>",
+  "bugs": {
+    "url": "<%= projectBugsUrl %>"
+  },
+  "homepage": "<%= projectHomepage %>",
+  "devDependencies": {
+    "@types/node": "^12.6.8",
+    "@typescript-eslint/eslint-plugin": "^1.13.0",
+    "@typescript-eslint/parser": "^1.13.0",
+    "@zerollup/ts-transform-paths": "^1.7.3",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-plugin-import": "^2.18.2",
+    "mocha": "^6.2.0",
+    "ttypescript": "^1.5.7",
+    "typescript": "^3.5.3"
+  }
+}
