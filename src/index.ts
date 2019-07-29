@@ -19,7 +19,7 @@ const QUESTIONS = [
         type: 'list',
         message: 'What project template would you like to generate?',
         choices: CHOICES,
-        when: (): boolean => !yargs.argv['template'],
+        when: (): boolean => !yargs.argv['templateChoice'],
     },
     {
         name: 'projectName',
@@ -32,7 +32,7 @@ const QUESTIONS = [
                 return 'Project name may only include letters, numbers, underscores and hashes.';
             }
         },
-        when: (): boolean => !yargs.argv['name'],
+        when: (): boolean => !yargs.argv['projectName'],
     },
     {
         name: 'projectVersion',
@@ -46,47 +46,49 @@ const QUESTIONS = [
                 return 'Project version should follow Semantic Versioning.';
             } 
         },
-        when: (): boolean => !yargs.argv['version'],
+        when: (): boolean => !yargs.argv['projectVersion'],
     },
     {
         name: 'projectDescription',
         type: 'input',
         message: 'description:',
-        when: (): boolean => !yargs.argv['description'],
+        when: (): boolean => !yargs.argv['projectDescription'],
     },
     {
         name: 'projectEntryPoint',
         type: 'input',
         message: 'entry point:',
         default: 'dist/index.js',
-        when: (): boolean => !yargs.argv['entryPoint'],
+        when: (): boolean => !yargs.argv['projectEntryPoint'],
     },
     {
         name: 'projectRepository',
         type: 'input',
         message: 'git repository:',
-        when: (): boolean => !yargs.argv['repository'],
+        when: (): boolean => !yargs.argv['projectRepository'],
     },
     {
         name: 'projectKeywords',
         type: 'input',
         message: 'keywords:',
-        when: (): boolean => !yargs.argv['keywords'],
+        when: (): boolean => !yargs.argv['projectKeywords'],
     },
     {
         name: 'projectAuthor',
         type: 'input',
         message: 'author:',
-        when: (): boolean => !yargs.argv['author'],
+        when: (): boolean => !yargs.argv['projectAuthor'],
     },
     {
         name: 'projectLicense',
         type: 'input',
         message: 'license:',
         default: 'MIT',
-        when: (): boolean => !yargs.argv['license'],
+        when: (): boolean => !yargs.argv['projectLicense'],
     },
 ];
+
+// console.log(yargs.argv);
 
 // @ts-ignore
 inquirer.prompt(QUESTIONS)

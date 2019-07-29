@@ -9,7 +9,7 @@
     "prebuild": "npm run lint",
     "build": "rm -R dist/ && npm run tsc",
     "postbuild": "cp -r src/templates dist",
-    "pretest": "npm run build && rm -R -- test/*/",
+    "pretest": "npm run build && rm -f -R -- test/*/",
     "test": "mocha --recursive"
   },
   "bin": {
