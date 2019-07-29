@@ -7,9 +7,9 @@
     "tsc": "ttsc",
     "lint": "eslint --fix src/**/*.ts",
     "prebuild": "npm run lint",
-    "build": "rm -r dist/ && npm run tsc",
+    "build": "rm -R dist/ && npm run tsc",
     "postbuild": "cp -r src/templates dist",
-    "pretest": "npm run build",
+    "pretest": "npm run build && rm -R -- test/*/",
     "test": "mocha --recursive"
   },
   "bin": {
