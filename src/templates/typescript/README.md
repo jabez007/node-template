@@ -1,4 +1,5 @@
 # <%= projectName %>
+<%= projectDescription %>
 
 ## Project setup
 ```
