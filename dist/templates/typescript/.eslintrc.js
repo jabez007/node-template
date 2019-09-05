@@ -28,4 +28,11 @@ module.exports = {
         'linebreak-style': 'off',
         'indent': 'off',
     },
+    "settings": {
+        "import/resolver": {
+          "node": {
+            "extensions": [".js", ".jsx", ".ts", ".tsx"]
+          }
+        }
+    },
 };
